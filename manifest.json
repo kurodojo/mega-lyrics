@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Spotify Genius Lyrics",
+    "version": "1.0",
+    "description": "Finds Genius lyrics for the currently playing Spotify song.",
+    "permissions": ["tabs", "scripting"],
+    "host_permissions": ["https://open.spotify.com/*"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://open.spotify.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
